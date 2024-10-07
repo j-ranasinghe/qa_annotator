@@ -52,40 +52,40 @@
     </div>
 
     <div id="data-entry-section">
-
-      <h2>Enter QA Pairs</h2>
+      
+      <h2>{{title}}</h2>
 
       <p>Enter the question and answers</p>
 
-      <form id="qa-form">
+      <form id="qa-form" action="{{ url_for('index') }}"  method="post">
 
         <div class="form-question">
           <label for="question">Question</label>
-          <textarea class="question-input" id="question" name="question" placeholder="Enter the question"></textarea>
+          <textarea class="question-input" id="question" name="question" placeholder="Enter the question"  required ></textarea>
     
         </div>
 
         <div class="form-group" id="answer-1">
           <label for="answer">Answer</label>
           <input type="text" id="answer-1" name="answer-1" required maxlength=100" size="100">
-          <p id="answer-1-start" class="start-point-answer">456</p>
-          <input type="hidden" id="answer-1-start" name="start-point-answer" value=start-point-answer>
+          <p id="answer-1-start" class="start-point-answer">00</p>
+          <input type="hidden" id="answer-1-start" name="start-point-answer-1" value= p>
         
         </div>
 
         <div class="form-group" id="answer-2">
           <label for="answer">Answer</label>
           <input type="text" id="answer-2" name="answer-2" maxlength=100" size="100" >
-          <p id="answer-2-start" class="start-point-answer">123</p>
-          <input type="hidden" id="answer-2-start" name="start-point-answer" value=start-point-answer>
+          <p id="answer-2-start" class="start-point-answer">00</p>
+          <input type="hidden" id="answer-2-start" name="start-point-answer-2" value=start-point-answer>
          
         </div>
 
         <div class="form-group" id="answer-3">
           <label for="answer">Answer</label>
           <input type="text" id="answer-3" name="answer-3" maxlength=100" size="100" >
-          <p id="answer-3-start" class="start-point-answer">23</p>
-          <input type="hidden" id="answer-3-start" name="start-point-answer" value=start-point-answer>
+          <p id="answer-3-start" class="start-point-answer">00</p>
+          <input type="hidden" id="answer-3-start" name="start-point-answer-3" value=start-point-answer>
          
         </div>
 
