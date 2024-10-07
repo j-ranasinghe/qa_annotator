@@ -13,7 +13,9 @@ def receive_data():
         data = request.form
         print(f'question = {data["question"]}')
         print(f'answer = {data["answer-1"]}')
-        print(f'answer_start = {data["start-point-answer-1"]}')
+        print(f'answer_start1 = {data["start-point-answer-1"]}')
+        print(f'answer_start2 = {data["start-point-answer-2"]}')
+        print(f'answer_start3 = {data["start-point-answer-3"]}')
         
         return render_template("index.html", title="Saved QA pair | Enter another QA pair")
     else:
