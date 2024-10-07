@@ -1,0 +1,120 @@
+body{
+    background-color: #000000;
+    font-family: "Space Mono", sans-serif;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #fffefe;
+}
+
+h2{
+    text-align: center;
+    font-size: 20px;
+    border: 2px dashed #ffffff;
+
+}
+
+#heading-section{
+    text-align: center;
+    margin-top: 1%;
+    font-size: 18px;
+    border-bottom: #fffefe 2px dashed;
+}
+
+.main-section{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+}
+
+#display-section{
+    /* background-color: #FF0E0A; */
+    position: relative;
+    border: 2px dashed #ffffff;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: justify;
+    padding: 2%;
+    width: 35%;
+    height: 30%;
+
+}
+
+#data-entry-section{
+    /* background-color: #001166; */
+    font-size: 12px;
+    position: relative;
+    border: 2px dashed #ffffff;
+    padding: 1%;
+    padding-bottom: 5%;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+}
+
+/* Adjusting the text input fields */
+input[type="text"] {
+    
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Styling for the question textarea */
+textarea.question-input {
+    width: 100%; 
+    max-width: 100%; 
+    height: 110px; 
+    box-sizing: border-box;
+    padding: 10px;
+    resize: none; /* Prevents resizing to avoid breaking the layout */
+    font-size: 15px; 
+    margin: 5px 0;
+}
+
+
+.start-point-answer{
+    font-size: 10px;
+}
+
+
+button{
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 1%;
+    cursor: pointer;
+    font-size: 12px;
+    width: 15%;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #ffffff; 
+    color: #000000;
+}
+
+#load-data-btn{
+    position: absolute;
+    bottom: 3%;
+    left: 75%;
+}
+
+#reset-qa-btn{
+    position: absolute;
+    bottom: 3%;
+    left: 25%;
+}
+
+#save-qa-btn{
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+}
+#exit-btn{
+    position: absolute;
+    bottom: 3%;
+    left: 45%;
+}
