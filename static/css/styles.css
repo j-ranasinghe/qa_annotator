@@ -77,6 +77,7 @@ textarea.question-input {
 
 .start-point-answer{
     font-size: 10px;
+    /* display: none; */
 }
 
 
@@ -96,25 +97,46 @@ button:hover {
     color: #000000;
 }
 
+/* The button for loading data */
 #load-data-btn{
     position: absolute;
     bottom: 3%;
     left: 75%;
 }
 
-#reset-qa-btn{
+ /* The button for resetting the question and answer fields */
+#reset-qa-btn{ 
     position: absolute;
     bottom: 3%;
     left: 25%;
 }
 
-#save-qa-btn{
+/* The button for saving the question and answer fields */
+#save-qa-btn{  
     position: absolute;
     bottom: 3%;
     left: 5%;
 }
-#exit-btn{
+
+/* The button for exiting program*/
+#exit-btn{  
     position: absolute;
     bottom: 3%;
     left: 45%;
 }
+
+/* The button for the adding starting point of answer */
+.plusbtn {  
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color:#000000;
+    color:#ffffff;
+    font-size:15px;
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    top:-35px;
+    left:20px;
+}
+    
