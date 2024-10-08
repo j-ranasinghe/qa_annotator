@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="QA data annotator tool">
   <meta name="author" content="jranasinghe40">
   <link rel="stylesheet" href="../static/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <script src= "../static/js/script.js" defer></script>
- 
-
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <script src="../static/js/script.js" defer></script>
   <title>QA data annotator</title>
 </head>
-<body>
 
-  <div id="heading-section"> <h1>QA Data Annotator</h1></div>
+<body>
+  <div id="heading-section">
+    <h1>QA Data Annotator</h1>
+  </div>
 
   <div class="main-section">
-
     <div id="display-section">
-
-      <button id="load-data-btn">Load Data</button>
-      
-      <p id="passage">සමස්තයක් වශයෙන් ගත් කළ පුද්ගල ජීවිතය ප්‍රධාන අංශ දෙකක් යටතේ හඳුනාගත හැක. එනම් ලෞකික ජීවිතය හා ආධ්‍යාත්මික ජීවිතයයි. </p>
+      <h3 id='title'>Title:</h3>
+      <h3 id="id">ID:</h3>
+      <p id="passage">Tot el camp És un clam Som la gent blaugrana Tant se val d’on venim Si del sud o del nord Ara estem d’acord Estem d’acord Una bandera ens agermana Blaugrana al vent Un crit valent Tenim un nom el sap tothom BARÇA BARÇA BAAAAARÇA! Jugadors Seguidors Tots units fem força Són molts anys plens d’afanys Són molts gols que hem cridat I s’ha demostrat s’ha demostrat Que mai ningú no ens podrà tòrcer Blaugrana al vent Un crit valent Tenim un nom el sap tothom BARÇA BARÇA BAAAAARÇA!
+      </p>
+      <button id="load-data-btn" onclick="loadNextEntry()">Load Data</button>
     </div>
 
     <div id="data-entry-section">
-      
       <h2>{{title}}</h2>
-
       <p>Enter the question and answers</p>
-
-      <form id="qa-form" action="{{ url_for('index') }}"  method="post">
-
+      <!-- <form id="qa-form" action="{{ url_for('index') }}"  method="post"> -->
+      <form id="qa-form" onsubmit="event.preventDefault(); submitForm();">
         <div class="form-question">
           <label for="question">Question</label>
-          <textarea class="question-input" id="question" name="question" placeholder="Enter the question"  required ></textarea>
-    
+          <textarea class="question-input" id="question" name="question" placeholder="Enter the question"
+            required></textarea>
         </div>
-
         <div class="form-group">
           <label for="answer">Answer</label>
           <input type="text" class="answer" id="answer-1" name="answer-1" required maxlength=100" size="100">
           <p id="answer-1-start" class="start-point-answer">00</p>
-          <input type="hidden" id="start-point-answer-1" name="start-point-answer-1" >
-          <button type="button" class="plusbtn" id="plusbtn-1" onclick= "answer_index_finder('answer-1','#answer-1-start', 'start-point-answer-1')" >&#43;</button>
-          
-        
+          <input type="hidden" id="start-point-answer-1" name="start-point-answer-1">
+          <button type="button" class="plusbtn" id="plusbtn-1"
+            onclick="answer_index_finder('answer-1','#answer-1-start', 'start-point-answer-1')">&#43;</button>
         </div>
-
         <div class="form-group">
           <label for="answer">Answer</label>
-          <input type="text" class="answer" id="answer-2" name="answer-2" maxlength=100" size="100" >
+          <input type="text" class="answer" id="answer-2" name="answer-2" maxlength=100" size="100">
           <p id="answer-2-start" class="start-point-answer">00</p>
-          <input type="hidden" id="start-point-answer-2" name="start-point-answer-2" >
-          <button type="button"  class="plusbtn" id="plusbtn-2" onclick= "answer_index_finder('answer-2', '#answer-2-start', 'start-point-answer-2')">&#43;</button>
-        
-         
+          <input type="hidden" id="start-point-answer-2" name="start-point-answer-2">
+          <button type="button" class="plusbtn" id="plusbtn-2"
+            onclick="answer_index_finder('answer-2', '#answer-2-start', 'start-point-answer-2')">&#43;</button>
         </div>
-
         <div class="form-group">
           <label for="answer">Answer</label>
-          <input type="text" class="answer" id="answer-3" name="answer-3" maxlength=100" size="100" >
+          <input type="text" class="answer" id="answer-3" name="answer-3" maxlength=100" size="100">
           <p id="answer-3-start" class="start-point-answer">00</p>
-          <input type="hidden" id="start-point-answer-3" name="start-point-answer-3" >
-          <button type="button"  class="plusbtn" id= "plusbtn-3" onclick= "answer_index_finder('answer-3', '#answer-3-start','start-point-answer-3' )" >&#43;</button>
-          
-         
+          <input type="hidden" id="start-point-answer-3" name="start-point-answer-3">
+          <button type="button" class="plusbtn" id="plusbtn-3"
+            onclick="answer_index_finder('answer-3', '#answer-3-start','start-point-answer-3' )">&#43;</button>
         </div>
-
-        <button id="save-qa-btn" type="submit" p>Save</button>
+        <button id="save-qa-btn" type="submit">Save</button>
         <button id="reset-qa-btn" type="reset">Reset</button>
-        <button type="button"  id="exit-btn">Exit</button>
-      
-
+        <button type="button" id="exit-btn">Exit</button>
       </form>
     </div>
   </div>
 
+  <script>
+    flaskData = JSON.parse('{{ data | tojson | safe }}');
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeData(flaskData);
+    });
+
+  </script>
 </body>
+
 </html>

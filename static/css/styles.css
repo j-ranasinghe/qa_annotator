@@ -12,6 +12,12 @@ h2{
     border: 2px dashed #ffffff;
 
 }
+h3{
+    text-align: left;
+    font-size: 12px;
+    /* border: 2px dashed #ffffff; */
+}
+
 
 #heading-section{
     text-align: center;
@@ -100,6 +106,7 @@ button:hover {
 /* The button for loading data */
 #load-data-btn{
     position: absolute;
+    width: 15%;
     bottom: 3%;
     left: 75%;
 }
