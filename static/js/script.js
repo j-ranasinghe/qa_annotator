@@ -26,11 +26,11 @@ async function submitForm() {
     const context = document.getElementById('passage').innerText;
     const question = document.getElementById('question').value;
     const answer_1 = document.getElementById('answer-1').value;
-    const answer_2 = document.getElementById('answer-2').value;
-    const answer_3 = document.getElementById('answer-3').value;
+    // const answer_2 = document.getElementById('answer-2').value;
+    // const answer_3 = document.getElementById('answer-3').value;
     const answer_start_1 = document.getElementById('start-point-answer-1').value;
-    const answer_start_2 = document.getElementById('start-point-answer-2').value;
-    const answer_start_3 = document.getElementById('start-point-answer-3').value;
+    // const answer_start_2 = document.getElementById('start-point-answer-2').value;
+    // const answer_start_3 = document.getElementById('start-point-answer-3').value;
 
 
     const response = await fetch('/submit', { 
@@ -38,7 +38,7 @@ async function submitForm() {
         headers: { 
             'Content-Type': 'application/json; charset=UTF-8',
         }, 
-            body: JSON.stringify({
+            body: JSON.stringify( {
                 title: title,
                 paragraphs: [{
                 context: context,

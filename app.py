@@ -1,38 +1,33 @@
-from flask import Flask, render_template, request, jsonify
 import json
 import os
+from flask import Flask, render_template, request, jsonify
+from utils.file_utils import load_json, save_json
 
 app = Flask(__name__)
-
-
-# Load the JSON data from a file
-def load_json():
-    with open(r'data\input\split_files\split_1.json', encoding='utf-8') as f:
-        return json.load(f)
-
-# Save data to a new JSON file
-def save_json(data):
-    with open(r'data\output\new_data.json', 'w',encoding='utf-8') as f:
-        json.dump(data, f,ensure_ascii=False, indent=4)
         
-
+# Get the data from the JSON file and send it to the front-end
 @app.route("/")
 def index():
-     # Get the data from the JSON file and send it to the front-end
     data = load_json()
     return render_template('index.html', title="Enter QA pair", data=data)
     
-    
+ # Save the data to a new JSON file  from  client side
 @app.route('/submit', methods=['POST'])
 def submit():
     new_data = request.json
 
     print("Data received:", new_data)
 
-    save_json( request.json)
+    for paragraph in new_data.get('paragraphs', []):
+        # Iterate over Q&A pairs in each paragraph
+        for qa in paragraph.get('qas', []):
+            qa_id = qa.get('id')
+
+    save_json( new_data,qa_id)
 
     # Return a success response
     return jsonify({'message': 'Data saved successfully!'})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
