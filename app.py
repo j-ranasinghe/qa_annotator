@@ -16,7 +16,7 @@ def receive_data():
         print(f'answer_start1 = {data["start-point-answer-1"]}')
         print(f'answer_start2 = {data["start-point-answer-2"]}')
         print(f'answer_start3 = {data["start-point-answer-3"]}')
-        
+
         return render_template("index.html", title="Saved QA pair | Enter another QA pair")
     else:
         return render_template("index.html", title="Enter QA pair")
