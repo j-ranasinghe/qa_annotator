@@ -7,6 +7,7 @@ function displayData(data) {
     document.getElementById('title').innerText = data.title;
     document.getElementById('id').innerText = data.id;
     document.getElementById('passage').innerText = data.context;
+    document.getElementById('index').innerText = data.index;
 }
 
 // Load one entry at a time when the button is clicked
