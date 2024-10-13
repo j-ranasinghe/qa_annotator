@@ -1,10 +1,10 @@
 let allData = [];
-let currentIndex = 0;
+let currentIndex = 101;
  
 
 // Function to display the data
 function displayData(data) {
-    document.getElementById('title').innerText = data.title;
+    document.getElementById('title').innerText = data.title;;
     document.getElementById('id').innerText = data.id;
     document.getElementById('passage').innerText = data.context;
     document.getElementById('index').innerText = data.index;
@@ -25,12 +25,21 @@ async function submitForm() {
     const title = document.getElementById('title').innerText;
     const id = document.getElementById('id').innerText;
     const context = document.getElementById('passage').innerText;
+
     const question = document.getElementById('question').value;
     const answer_1 = document.getElementById('answer-1').value;
-    // const answer_2 = document.getElementById('answer-2').value;
-    // const answer_3 = document.getElementById('answer-3').value;
     const answer_start_1 = document.getElementById('start-point-answer-1').value;
-    // const answer_start_2 = document.getElementById('start-point-answer-2').value;
+
+    const question_2 = document.getElementById('question_2').value;
+    const answer_2 = document.getElementById('answer-2').value;
+    const answer_start_2 = document.getElementById('start-point-answer-2').value;
+    console.log(answer_start_2);
+    console.log(question_2);
+
+    const id_2 = id + "_2"
+    console.log(id_2);
+    
+    // const answer_3 = document.getElementById('answer-3').value;
     // const answer_start_3 = document.getElementById('start-point-answer-3').value;
 
 
@@ -50,7 +59,16 @@ async function submitForm() {
                     }],
                     question: question,
                     id: id,  
-                }]
+                },{
+                    answers: [{
+                        text: answer_2,
+                        answer_start: answer_start_2,
+                    }],
+                    question: question_2,
+                    id: id_2,
+                }
+                    
+                ]
             }]
         
             }),
