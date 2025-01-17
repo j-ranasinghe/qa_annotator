@@ -1,5 +1,5 @@
 let allData = [];
-let currentIndex = 101;
+let currentIndex = 82;
  
 
 // Function to display the data
