@@ -3,7 +3,7 @@ import os
 
 # Load the JSON data from a file
 def load_json():
-    with open(r'data\input\split_files\split_1.json', encoding='utf-8') as f:
+    with open(r'data\input\train\train_set_1_v1.json', encoding='utf-8') as f:
         return json.load(f)
 
 # Save data to a new JSON file
