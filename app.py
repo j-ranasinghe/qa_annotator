@@ -16,7 +16,7 @@ def index():
 def submit():
     new_data = request.json
 
-    print("Data received:", new_data)
+    #print("Data received:", new_data)
 
     for paragraph in new_data.get('paragraphs', []):
         # Iterate over Q&A pairs in each paragraph
