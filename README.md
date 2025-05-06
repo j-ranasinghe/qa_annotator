@@ -20,4 +20,5 @@ This is a simple **Question-Answer (QA) Annotator Tool** built with **Flask**. T
 
 4. Run the Flask app:
    ```
-   flask run
+   python app.py
+
